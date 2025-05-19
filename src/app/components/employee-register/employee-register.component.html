@@ -1,0 +1,45 @@
+<div style=" margin: auto; padding: 10px; width: 600px;">
+  <h1 style="text-align: center;"> Employee Details </h1>
+
+  <br>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" style="border: 2px solid green;" required [(ngModel)]="employee.name" name="Name"/>
+    </div>
+    <div class="mb-3">
+      <label for="Email" class="form-label">Email</label>
+      <input type="text" class="form-control" id="Email" placeholder="Email" style="border: 2px solid green;" name="Email" required [(ngModel)]="employee.email"/>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Contact number</label>
+      <input type="text" class="form-control" id="phone" placeholder="Contact number" style="border: 2px solid green;" name="phone" required [(ngModel)]="employee.contactNumber"/>
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <input type="text" class="form-control" id="address" placeholder="address" style="border: 2px solid green;" name="address" required [(ngModel)]="employee.address"/>
+    </div>
+    <div class="mb-3">
+      <label for="salary" class="form-label">Salary</label>
+      <input type="text" class="form-control" id="salary" placeholder="salary" style="border: 2px solid green;" name="salary" required [(ngModel)]="employee.salary"/>
+    </div>
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="username" style="border: 2px solid green;" name="username" required [(ngModel)]="employee.userName"/>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="text" class="form-control" id="password" placeholder="password" style="border: 2px solid green;" name="password" required [(ngModel)]="employee.password"/>
+    </div>
+    <div class="mb-3">
+      <label for="cpassword" class="form-label">Confirm Password</label>
+      <input type="text" class="form-control" id="cpassword" placeholder="confirm password" style="border: 2px solid green;" name="cpassword" required [(ngModel)]="confirmPassword"/>
+      <div *ngIf="passwordMatch">
+        <small style="color: red; font-weight: 200;">Password doesn't match !</small>
+
+       </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>

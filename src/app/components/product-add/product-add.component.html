@@ -1,0 +1,31 @@
+<div class="container" style="border: 3px solid black; border-radius: 25px; padding: 50px; width: 1000px;">
+  <div></div>
+  <div class="row">
+    <div class="col col-4" style="width: 400px; border-right: 3px dotted green;">
+
+      <form (ngSubmit)="onSubmit()" [formGroup]="detailsForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Product Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Product name..." formControlName="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="desc" class="form-label">Product description:</label>
+          <input type="text" class="form-control" id="desc" placeholder="Product description" formControlName="description" required>
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Product price</label>
+          <input type="text" class="form-control" id="price" placeholder="Product price..." formControlName="price" required>
+        </div>
+        <div class="mb-3">
+          <label for="sku" class="form-label">Product Stock Kept Unit (SKU)</label>
+          <input type="text" class="form-control" id="sku" placeholder="Product SKU..." formControlName="sku" required>
+        </div>
+        <button type="reset" class="btn btn-dark" style="margin-right: 10px;">Clear</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+    <div class="col col-6">
+      <input type="file" value="select " #selectFile (change)="onFileChange($event)">
+    </div>
+  </div>
+</div>

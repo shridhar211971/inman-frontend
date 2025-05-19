@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card bg-light p-3">
+        <img src="/employee-profile.png" class="rounded mb-3" width="80px" height="80px">
+        <h3 class="mt-3">Access Level:</h3>
+        <h4 class="text-primary">Employee</h4>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card bg-light p-4">
+        <h3>ID: <span class="text-info">{{ employee.employeeId }}</span></h3>
+        <h3>Name: <span class="text-info">{{ employee.name }}</span></h3>
+        <h3>Email: <span class="text-info">{{ employee.email}}</span></h3>
+        <h3>ContactNumber: <span class="text-info">{{ employee.contactNumber}}</span></h3>
+        <h3>Username: <span class="text-info">{{ employee.userName }}</span></h3>
+        <h3>Password: <span class="text-info">{{ employee.password }}</span></h3>
+        <button class="btn btn-primary" style="width: 100px; align-self: center; height: 40px;" (click)="updateEmployee(employee.employeeId)">Update</button>
+      </div>
+    </div>
+  </div>
+</div>

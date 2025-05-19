@@ -1,0 +1,30 @@
+export class Employee{
+  employeeId:number;
+  name:string;
+  email:string;
+  contactNumber:string;
+  address:string;
+  userName:string;
+  password:string;
+  salary:number;
+
+  constructor(employeeId:number=0,
+    name:string='',
+    email:string='',
+    contactNumber:string='',
+    userName:string='',
+    password:string='',
+    address:string='',
+    salary:number=0
+  )
+    {
+      this.employeeId=employeeId;
+      this.name=name;
+      this.email=email;
+      this.contactNumber=contactNumber;
+      this.userName=userName;
+      this.password=password;
+      this.address=address;
+      this.salary=salary;
+      }
+}

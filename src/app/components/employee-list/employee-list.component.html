@@ -1,0 +1,66 @@
+<form class="d-flex" (ngSubmit)="onSearch($event)" style="margin-bottom: 50px;">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" name="searchTerm" style="border: 3px solid #0D6EFD; width: 500px; margin-left: 500px; border-radius: 25px;">
+  <button class="btn btn-primary" type="submit" style="border-radius: 25px;">Search</button>
+</form>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sr.No.</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Password</th>
+        <th scope="col">View</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let y of filterEmployee; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ y.employeeId }}</td>
+        <td>{{ y.name }}</td>
+        <td>{{ y.email }}</td>
+        <td>{{ y.userName }}</td>
+        <td>{{ y.password }}</td>
+        <td>
+          <button class="btn" (click)="viewEmployee(y)">
+            <img src="/eye.png" width="30px" height="30px">
+          </button>
+        </td>
+        <td>
+          <button class="btn" (click)="updateEmployee(y)">
+            <img src="/edit.png" width="30px" height="30px">
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn" (click)="openDeleteModal(y)">
+            <img src="/trash.png" width="30px" height="30px">
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteConfirmationModalLabel">Delete Function Activated</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this employee {{ selectedEmployee?.employeeId }}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

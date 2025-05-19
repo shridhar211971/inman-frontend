@@ -1,0 +1,197 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="border: 3px solid wheat;">
+        <div class="card-body">
+          <h5 class="card-title">Products</h5>
+          <p class="card-text">Add and Manage Products</p>
+           <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#exampleModal1">
+  Manage
+</button>
+
+<!-- Modal -->
+<div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true" >
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Product Functionality</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-backdrop="false" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" >
+        <div class="row">
+          <div  class="col-md-4">
+            <div style="border: 3px solid green;" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Add Product</h5>
+                <p class="card-text">Register a Product</p>
+                <a  class="btn btn-success"  routerLink="product-add/{{adminId}}" >Register</a>
+              </div>
+            </div>
+          </div>
+
+          <div  class="col-md-4">
+            <div style="border: 3px solid green;" class="card">
+              <div class="card-body">
+                <h5 class="card-title">List Products</h5>
+                <p class="card-text">View and manage Products</p>
+                <a class="btn btn-success" routerLink="product-list/{{adminId}}">Show</a>
+              </div>
+            </div>
+          </div>
+          <!-- <div  class="col-md-4">
+            <div style="border: 3px solid green;" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Update Employees</h5>
+                <p class="card-text">Manage & update employee information.</p>
+                <a class="btn btn-success" (click)="UpdateEmployee()">Update</a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="border: 3px solid wheat;">
+        <div class="card-body">
+          <h5 class="card-title">Orders</h5>
+          <p class="card-text">View and manage customer orders.</p>
+          <a routerLink="/orders-getAll" class="btn btn-primary">Manage</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="border: 3px solid wheat;">
+        <div class="card-body">
+          <h5 class="card-title">Employees</h5>
+          <p class="card-text">Manage employee information.</p>
+           <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#exampleModal">
+  Manage
+</button>
+
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Functionality</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-backdrop="false" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" >
+        <div class="row">
+          <div  class="col-md-4">
+            <div style="border: 3px solid green;" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Add Employee</h5>
+                <p class="card-text">Register a Employee</p>
+                <a  class="btn btn-success"  routerLink="employee-register/{{adminId}}" >Register</a>
+              </div>
+            </div>
+          </div>
+
+          <div  class="col-md-4">
+            <div style="border: 3px solid green;" class="card">
+              <div class="card-body">
+                <h5 class="card-title">List Employees</h5>
+                <p class="card-text">View and manage employees</p>
+                <a class="btn btn-success" routerLink="employee-list/{{adminId}}">Show</a>
+              </div>
+            </div>
+          </div>
+          <!-- <div  class="col-md-4">
+            <div style="border: 3px solid green;" class="card">
+              <div class="card-body">
+                <h5 class="card-title">Update Employees</h5>
+                <p class="card-text">Manage & update employee information.</p>
+                <a class="btn btn-success" (click)="UpdateEmployee()">Update</a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mt-2">
+      <div class="card" style="border: 3px solid wheat;">
+        <div class="card-body">
+          <h5 class="card-title">Warehouse</h5>
+          <p class="card-text">Manage Warehouses</p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#exampleModal2">
+            Manage
+          </button>
+
+          <!-- Modal -->
+          <div class="modal" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true" >
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel2">Warehouse Functionality</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-backdrop="false" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" >
+                  <div class="row">
+                    <div  class="col-md-4">
+                      <div style="border: 3px solid rgb(96, 0, 128); border-radius: 16px;" class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Transactions</h5>
+                          <p class="card-text">View Warehouse transactions</p>
+                          <a  class="btn " style="background-color: rgb(96, 0, 128); color: white;"  routerLink="warehouse-transaction" >View</a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <!-- <div  class="col-md-4">
+                      <div style="border: 3px solid green;" class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Update Employees</h5>
+                          <p class="card-text">Manage & update employee information.</p>
+                          <a class="btn btn-success" (click)="UpdateEmployee()">Update</a>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mt-2">
+      <div class="card" style="border: 3px solid wheat;">
+        <div class="card-body">
+          <h5 class="card-title">Supplier</h5>
+          <p class="card-text">Manage Supplier information</p>
+          <a  class="btn btn-primary" routerLink="/supplier-getAll">Manage </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

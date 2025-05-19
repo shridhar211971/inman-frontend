@@ -1,0 +1,8 @@
+.product-thumbnail {
+  max-width: 100px; /* Adjust the maximum width of the thumbnail image */
+  height: auto; /* Ensure image height adjusts proportionally */
+}
+
+.card-body {
+  padding: 1rem; /* Add padding to the card body */
+}

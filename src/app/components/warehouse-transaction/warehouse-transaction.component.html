@@ -1,0 +1,36 @@
+<form class="d-flex" (ngSubmit)="onSearch($event)" style="margin-bottom: 50px;">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" name="searchTerm" style="border: 3px solid #0D6EFD; width: 500px; margin-left: 500px; border-radius: 25px;">
+  <button class="btn btn-primary" type="submit" style="border-radius: 25px;">Search</button>
+</form>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sr.No.</th>
+        <th scope="col">Transaction-id</th>
+        <th scope="col">Creation-date</th>
+        <th scope="col">creation-time</th>
+        <th scope="col">modified-by</th>
+        <th scope="col">modified-in</th>
+        <th scope="col">Action</th>
+        <th scope="col">Sku-change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let y of filterproduct; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{y.transactionId}}</td>
+        <td>{{y.creationDate}}</td>
+        <td>{{y.creationTime}}</td>
+        <td>{{y.modifiedBy}}</td>
+        <td>{{y.modifiedIn}}</td>
+        <td>{{y.transactionType}}</td>
+        <td>{{y.chanageInSku}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

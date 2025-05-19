@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card bg-light p-3" style="height: 300px; justify-content: center; align-items: center;">
+        <img src="/user.png" class="rounded mb-3" width="150px" height="150px">
+        <!-- <h3 class="mt-3">Profile >></h3> -->
+        <button class="btn btn-primary" style="width: 100px; align-self: center; height: 40px;" (click)="updateCustomer(customer.customerId)">Update</button>
+
+        <h4 class="text-primary"></h4>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card bg-light p-4"  style="height: 300px; justify-content: space-around;">
+        <h3 class="text-primary">Name: <span class="text-dark">{{ customer.name }}</span></h3>
+        <h3 class="text-primary">Email: <span class="text-dark">{{ customer.email}}</span></h3>
+        <h3 class="text-primary">ContactNumber: <span class="text-dark">{{ customer.contactNumber}}</span></h3>
+        <h3 class="text-primary">Username: <span class="text-dark">{{ customer.userName }}</span></h3>
+        <h3 class="text-primary">Password: <span class="text-dark">{{ customer.password }}</span></h3>
+      </div>
+    </div>
+  </div>
+</div>
