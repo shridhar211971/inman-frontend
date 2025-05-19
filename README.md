@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
 
 ## InMan-Backend
-  github-link:https://github.com/Ashu123falle/InMan-backend.git
+  github-link:https://github.com/shridhar211971/InMan-backend.git
 
 ## Development server
 
