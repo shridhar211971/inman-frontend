@@ -10,7 +10,8 @@ import { CartProduct } from '../model/CartProduct';
 })
 export class CustomerService {
 
-  baseUrl="http://localhost:9090/api/customer";
+  baseUrl = 'https://inman-backend.onrender.com/api/customer';
+
 
 
   constructor(private http:HttpClient) { }

@@ -10,7 +10,8 @@ export class EmployeeService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl="http://localhost:9090/api/employee";
+  baseUrl = "https://inman-backend.onrender.com/api/employee";
+
   //baseUrl = "https://inventory-backend.onrender.com/api/employee";
 
 

@@ -13,7 +13,8 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl="http://localhost:9090/api/admin";
+  baseUrl = "https://inman-backend.onrender.com/api/admin";
+
 
   loginAdmin(username:string,password:string):Observable<Admin>{
     return this.http.post<Admin>(`${this.baseUrl}/login`,{username,password})
