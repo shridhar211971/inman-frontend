@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist/inventory-manage"
+  publish = "dist/InMan-main" 
 
 [build.environment]
   NODE_VERSION = "18.19.0"
