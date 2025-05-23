@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "InMan-main": {
+    "inventory-manage": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/InMan-main",
+            "outputPath": "dist/inventory-manage",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"
@@ -75,11 +75,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "outputPath": "dist/InMan-main",
-              "buildTarget": "InMan-main:build:production"
+              "outputPath": "dist/inventory-manage",
+              "buildTarget": "inventory-manage:build:production"
             },
             "development": {
-              "buildTarget": "InMan-main:build:development"
+              "buildTarget": "inventory-manage:build:development"
             }
           },
           "defaultConfiguration": "development"
