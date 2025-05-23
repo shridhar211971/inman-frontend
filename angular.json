@@ -75,7 +75,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "outputPath": "dist/<InMan-main>/browser",
+              "outputPath": "dist/InMan-main",
               "buildTarget": "InMan-main:build:production"
             },
             "development": {
