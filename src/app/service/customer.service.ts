@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { Customer } from '../model/Customer';
 import { Product } from '../model/Product';
 import { CartProduct } from '../model/CartProduct';
@@ -11,53 +11,49 @@ import { environment } from '../../environments/environment';
 })
 export class CustomerService {
 
-  baseUrl = environment.baseUrl + "/api/customer";
+  baseUrl = environment.baseUrl +"/api/customer";
 
-  constructor(private http: HttpClient) { }
 
-  addCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(`${this.baseUrl}/add`, customer);
+
+  constructor(private http:HttpClient) { }
+
+  addCustomer(customer:Customer):Observable<Customer>{
+    return this.http.post<Customer>(`${this.baseUrl}/add`,customer);
   }
-
   loginCustomer(email: string, password: string): Observable<Customer> {
     return this.http.post<Customer>(`${this.baseUrl}/login`, { email, password });
   }
-
   getCustomerById(customerId: number): Observable<Customer> {
     return this.http.get<Customer>(`${this.baseUrl}/${customerId}/get/customer`);
   }
-
-  updateCustomer(Customer: object, id: number): Observable<object> {
+  updateCustomer(Customer: object,id:number ): Observable<object> {
     return this.http.put(`${this.baseUrl}/update/customer/${id}`, Customer);
   }
+// -------------------------------------------- Product -------------------------------------------
+getAllProducts():any{
+  return this.http.get(`${this.baseUrl}/getAll/product`);
+}
 
-  // -------------------------------------------- Product -------------------------------------------
-  getAllProducts(customerId: number): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.baseUrl}/${customerId}/getAll/product`);
-  }
+addToCart(productId: number, customerId: number): Observable<Product> {
+  const url = `${this.baseUrl}/${customerId}/addToCart/${productId}`;
+  return this.http.post<Product>(url, {});
+}
 
-  // -------------------------------------------- Cart -------------------------------------------
-  addToCart(productId: number, customerId: number): Observable<Product> {
-    const url = `${this.baseUrl}/${customerId}/addToCart/${productId}`;
-    return this.http.post<Product>(url, {});
-  }
+getCartItemById(customerId: number, cartId: number): Observable<Product> {
+  return this.http.get<Product>(`${this.baseUrl}/${customerId}/get/cartItem/${cartId}`);
+}
 
-  getCartItemById(customerId: number, cartId: number): Observable<Product> {
-    return this.http.get<Product>(`${this.baseUrl}/${customerId}/get/cartItem/${cartId}`);
-  }
+getAllCartItems(customerId: number): Observable<CartProduct[]> {
+  return this.http.get<CartProduct[]>(`${this.baseUrl}/${customerId}/getall/cartItems`);
+}
 
-  getAllCartItems(customerId: number): Observable<CartProduct[]> {
-    return this.http.get<CartProduct[]>(`${this.baseUrl}/${customerId}/getall/cartItems`);
-  }
+updateCartItem(customerId: number, productId: number, product: Product): Observable<Product> {
+  return this.http.put<Product>(`${this.baseUrl}/${customerId}/update/cartItem/${productId}`, product);
+}
 
-  updateCartItem(customerId: number, productId: number, product: Product): Observable<Product> {
-    return this.http.put<Product>(`${this.baseUrl}/${customerId}/update/cartItem/${productId}`, product);
-  }
-
-  deleteCartItem(customerId: number, productId: number): Observable<CartProduct> {
-    return this.http.delete<CartProduct>(`${this.baseUrl}/${customerId}/delete/item/${productId}`);
-  }
-
+deleteCartItem(customerId: number, productId: number): Observable<CartProduct> {
+  return this.http.delete<CartProduct>(`${this.baseUrl}/${customerId}/delete/item/${productId}`);
+}
 
 // createOrder(customerId: number): Observable<Order> {
 //   return this.http.post<Order>(`${this.baseUrl}/${customerId}/place/order`, {});
