@@ -1,4 +1,4 @@
-enviexport const environment = {
+export const environment = {
   production: true,
   baseUrl: "https://inman-backend.onrender.com"
 };
