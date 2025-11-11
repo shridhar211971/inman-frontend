@@ -56,7 +56,7 @@ export class ProductCardComponent implements OnInit {
   //   });
   // }
   getImageUrl(detail: Product): string {
-    return `http://localhost:8080/api/admin/get/product/image/${detail.productId}`;
+    return `https://inman-backend.onrender.com/api/admin/get/product/image/${detail.productId}`;
   }
 
   view(): void {
