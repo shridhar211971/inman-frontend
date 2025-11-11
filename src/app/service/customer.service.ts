@@ -4,13 +4,14 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { Customer } from '../model/Customer';
 import { Product } from '../model/Product';
 import { CartProduct } from '../model/CartProduct';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  baseUrl = 'https://inman-backend.onrender.com/api/customer';
+  baseUrl = environment.baseUrl +"/api/customer";
 
 
 
