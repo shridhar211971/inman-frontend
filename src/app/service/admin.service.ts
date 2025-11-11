@@ -5,6 +5,7 @@ import { Admin } from '../model/Admin';
 import { Employee } from '../model/Employee';
 import { Product } from '../model/Product';
 import { Wtransaction } from '../model/WaretouseTransactions';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl = "https://inman-backend.onrender.com/api/admin";
+  baseUrl = environment.baseUrl +"/api/admin";
 
 
   loginAdmin(username:string,password:string):Observable<Admin>{
