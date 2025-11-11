@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from '../model/Employee';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class EmployeeService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl = "https://inman-backend.onrender.com/api/employee";
+  baseUrl = environment.baseUrl +"/api/employee";
 
   //baseUrl = "https://inventory-backend.onrender.com/api/employee";
 
